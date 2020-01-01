@@ -1,4 +1,4 @@
-# gci-makefile
+# gci-makefile [![Build Status](https://travis-ci.com/maxgodfrey2004/gci-makefile.svg?branch=master)](https://travis-ci.com/maxgodfrey2004/gci-makefile)
 Contains code pertinent to the Google Code-in 2019 task "What is a makefile anyway?".
 
 ### Task Description
