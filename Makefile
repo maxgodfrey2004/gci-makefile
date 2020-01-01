@@ -15,11 +15,13 @@
 CC := g++
 CFLAGS := -Wall -Wextra -Wpedantic -O2 -std=c++11
 
+PY := python3
+
 POINTS_OUTFILE_NAME := points.txt
 
-all: points.txt
+all: points
 
-points.txt: points
+$(POINTS_OUTFILE_NAME): points
 	./points $(POINTS_OUTFILE_NAME)
 
 points: main.cc points.o
@@ -28,9 +30,12 @@ points: main.cc points.o
 points.o: points.cc points.h
 	$(CC) $(CFLAGS) -c points.cc
 
-.PHONY: clean
+.PHONY: clean run
 
 clean:
 	rm *.o
 	rm points
-	rm points.txt
+	rm $(POINTS_OUTFILE_NAME)
+
+run: plot_points.py $(POINTS_OUTFILE_NAME)
+	$(PY) plot_points.py $(POINTS_OUTFILE_NAME)
