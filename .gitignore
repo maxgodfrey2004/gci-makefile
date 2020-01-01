@@ -160,3 +160,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Files created when `make` is called
+points
+points.txt
